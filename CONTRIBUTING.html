@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贡献指南 - 翼术师世界</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .guide-content {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+        .guide-content h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .guide-content h2 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .guide-content h3 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+        .guide-content code {
+            background: rgba(124, 58, 237, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .guide-content pre {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .guide-content ul, .guide-content ol {
+            margin-left: 2rem;
+            line-height: 1.8;
+        }
+        .guide-content a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        .guide-content a:hover {
+            text-decoration: underline;
+        }
+        .note-box {
+            background: rgba(45, 212, 191, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-feather-alt"></i>
+                <h1>翼术师世界</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="CONTRIBUTING.html"><i class="fas fa-book"></i> 贡献指南</a></li>
+                    <li><a href="https://github.com/wingician/doc" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="guide-content">
+        <h1><i class="fas fa-pen-fancy"></i> 贡献指南</h1>
+        
+        <p>感谢你对翼术师世界的兴趣！这是一个开放式协作的魔法世界创作项目，我们欢迎所有形式的贡献。</p>
+
+        <h2><i class="fas fa-star"></i> 你可以贡献什么？</h2>
+        
+        <h3>世界设定</h3>
+        <ul>
+            <li>地理环境：大陆、岛屿、城市、特殊地貌</li>
+            <li>社会人文：节日、习俗、文化传统</li>
+            <li>历史事件：重要战役、文明变迁</li>
+            <li>魔法体系：新的魔法理论、魔法现象</li>
+            <li>生物种族：动物、植物、魔物、智慧种族</li>
+        </ul>
+
+        <h3>人物角色</h3>
+        <ul>
+            <li>角色卡片：背景、性格、能力、关系</li>
+            <li>术师资料：等级、专精、成就</li>
+        </ul>
+
+        <h3>故事创作</h3>
+        <ul>
+            <li>短篇故事：基于世界设定的独立故事</li>
+            <li>长篇小说：系列创作</li>
+            <li>人物传记：角色的完整故事</li>
+        </ul>
+
+        <h2><i class="fas fa-rocket"></i> 如何开始</h2>
+
+        <h3>1. Fork 仓库</h3>
+        <p>点击右上角的 Fork 按钮，将仓库复制到你的账户下。</p>
+        <pre><code>git clone https://github.com/你的用户名/doc.git
+cd doc</code></pre>
+
+        <h3>2. 创建分支</h3>
+        <pre><code>git checkout -b feature/你的功能名称</code></pre>
+
+        <h3>3. 添加内容</h3>
+        <p>按照文件结构组织你的内容，使用 Markdown 格式编写。</p>
+
+        <h3>4. 提交更改</h3>
+        <pre><code>git add .
+git commit -m "描述你的更改"
+git push origin feature/你的功能名称</code></pre>
+
+        <h3>5. 创建 Pull Request</h3>
+        <p>在 GitHub 上创建 PR，等待自动检查和审核。</p>
+
+        <h2><i class="fas fa-robot"></i> 自动冲突检查</h2>
+        
+        <div class="note-box">
+            <strong><i class="fas fa-info-circle"></i> AI 助手</strong><br>
+            我们的 AI 助手会自动检查你的提交，确保内容与现有设定不冲突。
+        </div>
+
+        <p>检查项包括：</p>
+        <ul>
+            <li><strong>时间线冲突</strong>：事件时间、角色出现时间是否合理</li>
+            <li><strong>地理冲突</strong>：地点是否在合理位置</li>
+            <li><strong>魔法体系冲突</strong>：魔法能力是否符合理论</li>
+            <li><strong>人物冲突</strong>：角色关系、能力等级是否合理</li>
+            <li><strong>文化冲突</strong>：习俗是否符合世界设定</li>
+        </ul>
+
+        <h2><i class="fas fa-check-circle"></i> 内容规范</h2>
+
+        <h3>禁止的内容</h3>
+        <div class="warning-box">
+            <ul>
+                <li>❌ 现代科技（电脑、手机、互联网等）</li>
+                <li>❌ 核武器、现代武器</li>
+                <li>❌ 与已有魔法理论严重冲突的设定</li>
+                <li>❌ 打破时间线连贯性的内容</li>
+            </ul>
+        </div>
+
+        <h3>鼓励的内容</h3>
+        <ul>
+            <li>✅ 基于东方哲学的魔法理论</li>
+            <li>✅ 融合易经、五行、八卦的设定</li>
+            <li>✅ 富有想象力的地理环境</li>
+            <li>✅ 深入的人物刻画</li>
+            <li>✅ 引人入胜的故事情节</li>
+        </ul>
+
+        <h2><i class="fas fa-code-branch"></i> 分支管理</h2>
+
+        <h3>主分支 (main)</h3>
+        <p>主世界线的正史设定，要求最严格。</p>
+
+        <h3>平行宇宙分支</h3>
+        <p>你可以创建新的分支探索不同的世界线：</p>
+        <ul>
+            <li><code>branch-steampunk</code> - 蒸汽朋克异世界</li>
+            <li><code>branch-darkage</code> - 黑暗中世纪设定</li>
+            <li><code>branch-cybermagic</code> - 赛博魔法时代</li>
+        </ul>
+
+        <h2><i class="fas fa-heart"></i> 感谢</h2>
+        <p>感谢你愿意为翼术师世界添砖加瓦！让我们一起创造一个精彩的魔法世界！</p>
+
+        <div class="note-box">
+            <strong><i class="fas fa-question-circle"></i> 需要帮助？</strong><br>
+            如有任何疑问，请在 <a href="https://github.com/wingician/doc/issues">GitHub Issues</a> 中提出。
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 翼术师世界 | 基于 <a href="https://pages.github.com/">GitHub Pages</a> 构建</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

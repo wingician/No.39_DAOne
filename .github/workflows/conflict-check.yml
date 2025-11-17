@@ -1,0 +1,113 @@
+name: 世界设定冲突检查
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '故事背景/**'
+      - '人物卡片/**'
+      - '小故事/**'
+      - '小片段/**'
+
+jobs:
+  conflict-check:
+    runs-on: ubuntu-latest
+    name: AI设定冲突检查
+    
+    steps:
+      - name: Checkout 代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 获取变更文件
+        id: changed-files
+        uses: tj-actions/changed-files@v41
+        with:
+          files: |
+            故事背景/**
+            人物卡片/**
+            小故事/**
+            小片段/**
+      
+      - name: 设置 Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: 安装依赖
+        run: |
+          pip install openai anthropic PyYAML
+      
+      - name: 运行冲突检查
+        id: check
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python .github/scripts/check_conflicts.py \
+            --changed-files="${{ steps.changed-files.outputs.all_changed_files }}" \
+            --pr-number="${{ github.event.pull_request.number }}" \
+            --output=check_result.json
+      
+      - name: 读取检查结果
+        id: result
+        run: |
+          if [ -f check_result.json ]; then
+            echo "result_file=check_result.json" >> $GITHUB_OUTPUT
+            cat check_result.json
+          fi
+      
+      - name: 发布检查结果到PR
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const fs = require('fs');
+            let comment = '## 🤖 AI 世界设定检查结果\n\n';
+            
+            try {
+              const result = JSON.parse(fs.readFileSync('check_result.json', 'utf8'));
+              
+              if (result.conflicts && result.conflicts.length > 0) {
+                comment += '### ⚠️ 发现潜在冲突\n\n';
+                result.conflicts.forEach((conflict, index) => {
+                  comment += `#### ${index + 1}. ${conflict.type}\n`;
+                  comment += `**文件**: \`${conflict.file}\`\n`;
+                  comment += `**描述**: ${conflict.description}\n`;
+                  comment += `**建议**: ${conflict.suggestion}\n\n`;
+                });
+              } else {
+                comment += '### ✅ 未发现明显冲突\n\n';
+                comment += '你的内容看起来与现有设定保持一致！\n\n';
+              }
+              
+              if (result.warnings && result.warnings.length > 0) {
+                comment += '### 💡 提示\n\n';
+                result.warnings.forEach((warning, index) => {
+                  comment += `${index + 1}. ${warning}\n`;
+                });
+              }
+              
+              comment += '\n---\n';
+              comment += '*此检查由 AI 自动完成，仅供参考。最终审核由维护者决定。*';
+              
+            } catch (error) {
+              comment += '### ❌ 检查失败\n\n';
+              comment += `无法读取检查结果: ${error.message}\n`;
+              comment += '请手动审核内容。';
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+      
+      - name: 上传检查报告
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conflict-check-report
+          path: check_result.json

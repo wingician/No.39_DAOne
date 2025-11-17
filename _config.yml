@@ -1,0 +1,42 @@
+# Jekyll 配置文件（可选）
+# 如果不使用 Jekyll，GitHub Pages 会直接提供静态文件
+
+# 站点设置
+title: 翼术师世界
+description: 一个开放式协作的魔法世界创作项目
+author: wingician
+lang: zh-CN
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+
+# 排除文件
+exclude:
+  - .github/
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+
+# 包含文件
+include:
+  - _pages
+  - assets
+
+# 插件
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO 设置
+url: "https://wingician.github.io"
+baseurl: "/doc"
+
+# 社交媒体
+github_username: wingician
+
+# 主题（使用默认主题或自定义）
+theme: null

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界观索引 - 翼术师世界</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .world-index {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+        .index-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        .category-title {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .doc-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .doc-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 20px rgba(124, 58, 237, 0.3);
+        }
+        .doc-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        .doc-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .doc-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .doc-link:hover {
+            color: var(--secondary-color);
+        }
+        .coming-soon {
+            opacity: 0.6;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-feather-alt"></i>
+                <h1>翼术师世界</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="index.html"><i class="fas fa-globe"></i> 世界观</a></li>
+                    <li><a href="../CONTRIBUTING.html"><i class="fas fa-code-branch"></i> 参与创作</a></li>
+                    <li><a href="https://github.com/wingician/doc" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="world-index">
+        <h1 class="index-title">世界观设定索引</h1>
+
+        <!-- 核心世界观 -->
+        <div class="category-section">
+            <h2 class="category-title">
+                <i class="fas fa-book-open"></i>
+                核心世界观
+            </h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h3>世界的构成</h3>
+                    <p>稻一大陆的起源、九神州的形成、阴阳镜像世界的核心概念</p>
+                    <a href="../故事背景/大纲——世界的构成的设想.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>世界观设定</h3>
+                    <p>正派与反派、道家思想、佛教理念在世界中的体现</p>
+                    <a href="../故事背景/背景和寓意/（工事）世界观.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>两个思想世界</h3>
+                    <p>东方哲学与西方奇幻的融合</p>
+                    <a href="../故事背景/背景和寓意/两个思想世界.md" class="doc-link">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 历史纪元 -->
+        <div class="category-section">
+            <h2 class="category-title">
+                <i class="fas fa-clock-rotate-left"></i>
+                历史纪元
+            </h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h3>时间主干线</h3>
+                    <p>从远古纪元到现在，完整的历史时间线和重大事件</p>
+                    <a href="../故事背景/时间线(历史)/时间主干线.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>魔法纪元</h3>
+                    <p>翼术师担任太师，王国繁荣安定的黄金时代</p>
+                    <a href="../故事背景/时间线(历史)/魔法纪元.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>英雄纪元</h3>
+                    <p>魔法衰落，英雄学院崛起的时代</p>
+                    <a href="../故事背景/时间线(历史)/英雄纪元.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>完美万物纪元</h3>
+                    <p>工业革命、魔法被禁、长城倒塌的时代</p>
+                    <a href="../故事背景/时间线(历史)/完美万物纪元.md" class="doc-link">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 魔法体系 -->
+        <div class="category-section">
+            <h2 class="category-title">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                魔法体系
+            </h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h3>魔法的本质</h3>
+                    <p>四大魔法理论：混沌能量、虚拟世界、本体归一、精力映射</p>
+                    <a href="../故事背景/魔法/魔法的本质.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>魔法强度</h3>
+                    <p>魔法能量等级和强度分类</p>
+                    <a href="../故事背景/魔法/魔法强度.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>魔法的限制</h3>
+                    <p>魔法的边界和无法实现的事物</p>
+                    <a href="../故事背景/魔法/魔法的限制.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>龙须魔杖</h3>
+                    <p>最高级的魔杖，龙的力量</p>
+                    <a href="../故事背景/魔法/龙须魔杖.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>结界魔法</h3>
+                    <p>空间保护与限制的高级魔法</p>
+                    <a href="../故事背景/魔法/结界.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>山魔法和海魔法</h3>
+                    <p>不同地域的魔法特性</p>
+                    <a href="../故事背景/魔法/山魔法和海魔法.md" class="doc-link">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 地理环境 -->
+        <div class="category-section">
+            <h2 class="category-title">
+                <i class="fas fa-map-location-dot"></i>
+                地理环境
+            </h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h3>稻一大陆</h3>
+                    <p>上古时期的统一大陆，九神州的前身</p>
+                    <a href="../故事背景/天文地理和历史/稻一大陆.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>南烛大陆</h3>
+                    <p>九神州之一，魔法文明发达的大陆</p>
+                    <a href="../故事背景/天文地理和历史/南烛大陆.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>凄海</h3>
+                    <p>神秘的海域，魔法效果减弱之地</p>
+                    <a href="../故事背景/天文地理和历史/凄海.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>狄拉克之海</h3>
+                    <p>连接魔地的危险海域</p>
+                    <a href="../故事背景/天文地理和历史/狄拉克之海.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>柳林镇</h3>
+                    <p>一个典型的小镇，许多故事的发生地</p>
+                    <a href="../故事背景/天文地理和历史/柳林镇.md" class="doc-link">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 社会人文 -->
+        <div class="category-section">
+            <h2 class="category-title">
+                <i class="fas fa-users"></i>
+                社会人文
+            </h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h3>元日</h3>
+                    <p>九神州的新年，重要的传统节日</p>
+                    <a href="../故事背景/社会人文/元日.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>素空节</h3>
+                    <p>四月初四的传统节日</p>
+                    <a href="../故事背景/社会人文/四月初四 素空节.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>九神洲的国王们</h3>
+                    <p>各大陆的统治者和政治结构</p>
+                    <a href="../故事背景/社会人文/九神洲世界之现在的国王们.md" class="doc-link">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 翼术师体系 -->
+        <div class="category-section">
+            <h2 class="category-title">
+                <i class="fas fa-graduation-cap"></i>
+                翼术师体系
+            </h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h3>翼术师等级</h3>
+                    <p>从学徒到翼术师的完整等级体系</p>
+                    <a href="../故事背景/翼术师/关于翼术师的称号等级.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>魔法学院</h3>
+                    <p>培养术师的最高学府</p>
+                    <a href="../故事背景/魔法/魔法学院.md" class="doc-link">查看详情 →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>英雄学院</h3>
+                    <p>与魔法学院对抗的新兴势力</p>
+                    <a href="../故事背景/王国和学院/英雄学院.md" class="doc-link">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人物故事 -->
+        <div class="category-section">
+            <h2 class="category-title">
+                <i class="fas fa-user"></i>
+                人物与故事
+            </h2>
+            <div class="doc-grid">
+                <div class="doc-card coming-soon">
+                    <h3>人物卡片</h3>
+                    <p>主要角色的详细资料即将上线</p>
+                </div>
+                <div class="doc-card coming-soon">
+                    <h3>短篇故事</h3>
+                    <p>基于世界观的精彩故事即将上线</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: var(--card-bg); border-radius: 15px;">
+            <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">
+                <i class="fas fa-heart"></i> 参与创作
+            </h3>
+            <p style="color: var(--text-dim); margin-bottom: 1.5rem;">
+                这个世界还在不断扩展，欢迎你加入创作！
+            </p>
+            <a href="../CONTRIBUTING.html" class="btn btn-primary">查看贡献指南</a>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 翼术师世界 | 基于 <a href="https://pages.github.com/">GitHub Pages</a> 构建</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
